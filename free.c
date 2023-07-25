@@ -39,19 +39,3 @@ int handle_exit(char **tokens)
 	exit(exit_status);
 	return (0);
 }
-
-/**
- * print_environment - Prints the current environment.
- *
- * Description: This function prints the key-value pairs of the current
- * environment.
- */
-void print_environment(void)
-{
-	char **env;
-
-	for (env = environ; *env != NULL; env++)
-	{
-		printf("%s\n", *env);
-	}
-}

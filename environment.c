@@ -107,7 +107,20 @@ char *find_full_path(char *command)
 
 int handle_env(char **tokens)
 {
-	print_environment();
+	char **env;
+	char *current_env;
+
+	for (env = environ; *env != NULL; env++)
+	{
+		current_env = *env;
+		while (*current_env)
+		{
+			_putchar(*current_env);
+			current_env++;
+		}
+		_putchar('\n');
+	}
+
 	free_tokens(tokens);
 	return (1);
 }

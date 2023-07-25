@@ -29,7 +29,6 @@ char *check_in_each_path(char *command);
 char *search_command_in_path(char *command);
 int handle_exit(char **tokens);
 int handle_env(char **tokens);
-void print_environment(void);
 void exit_shell(void);
 char *custom_getline(void);
 char *strtok_custom(char *str, const char *delim, char **saveptr);

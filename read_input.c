@@ -83,7 +83,7 @@ int token_execution(char **tokens)
 		{
 			return (handle_exit(tokens));
 		}
-		else if (strcmp(tokens[0], "env"))
+		else if (strcmp(tokens[0], "env") == 0)
 		{
 			return (handle_env(tokens));
 		}
