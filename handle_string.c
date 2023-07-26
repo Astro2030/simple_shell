@@ -56,8 +56,8 @@ char *custom_getline(void)
 	line[line_length] = '\0';
 	if (eof_flag && line_length == 0)
 	{
-		free(line);
-		return (NULL);
+		_putchar('\n');
+		exit(EXIT_SUCCESS);
 	}
 	return (line);
 }
