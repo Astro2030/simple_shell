@@ -87,7 +87,7 @@ int token_execution(char **tokens)
 		{
 			return (handle_env(tokens));
 		}
-		fprintf(stderr, "Command not found: %s\n", tokens[0]);
+		fprintf(stderr, "%s: No such file or directory\n", tokens[0]);
 		return (1);
 	}
 
