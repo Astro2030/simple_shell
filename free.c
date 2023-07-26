@@ -32,7 +32,7 @@ int handle_exit(char **tokens)
 
 	if (tokens[1] != NULL)
 	{
-		exit_status = atoi(tokens[1]);
+		exit_status = _atoi(tokens[1]);
 	}
 
 	free_tokens(tokens);

@@ -33,5 +33,6 @@ void exit_shell(void);
 char *custom_getline(void);
 char *strtok_custom(char *str, const char *delim, char **saveptr);
 int read_line(char *buffer, int *buffer_index, int *buffer_length);
+int _atoi(char *s);
 
 #endif
