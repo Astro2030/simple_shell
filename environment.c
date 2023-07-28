@@ -12,7 +12,7 @@ char *check_absolute_path(char *command)
 	{
 		if (access(command, X_OK) == 0)
 		{
-			return (strdup(command));
+			return (command);
 		}
 	}
 
@@ -80,10 +80,6 @@ char *search_command_in_path(char *command)
 	if (full_path == NULL)
 	{
 		full_path = check_in_each_path(command);
-	}
-	else
-	{
-		free(full_path);
 	}
 
 	return (full_path);

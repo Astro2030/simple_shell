@@ -25,7 +25,6 @@ int main(void)
 		tokens = tokenize_input(str);
 		status = token_execution(tokens);
 
-		free(str);
 		free_tokens(tokens);
 
 	} while (status != 0);

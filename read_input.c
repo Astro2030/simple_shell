@@ -41,7 +41,7 @@ char **tokenize_input(char *input_string)
 	token = strtok_custom(input_string, TOKEN_DELIMETER, &saveptr);
 	while (token != NULL)
 	{
-		tokens[index] = strdup(token);
+		tokens[index] = token;
 		index++;
 
 		if (index >= buffersize)
@@ -106,6 +106,8 @@ int token_execution(char **tokens)
 			waitpid(pid, &status, WUNTRACED);
 		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
 	}
+
+	free(full_path);
 
 	return (1);
 }
