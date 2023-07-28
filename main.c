@@ -26,7 +26,7 @@ int main(void)
 		status = token_execution(tokens);
 
 		free(str);
-		free(tokens);
+		free_tokens(tokens);
 
 	} while (status != 0);
 

@@ -47,7 +47,7 @@ char *custom_getline(void)
 			new_line = (char *)realloc(line, line_length + 1);
 			if (new_line == NULL)
 			{
-				perror("Memory allocation error");
+				perror("Memory allocation error");	
 				exit(EXIT_FAILURE);
 			}
 			line = new_line;

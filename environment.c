@@ -81,6 +81,10 @@ char *search_command_in_path(char *command)
 	{
 		full_path = check_in_each_path(command);
 	}
+	else
+	{
+		free(full_path);
+	}
 
 	return (full_path);
 

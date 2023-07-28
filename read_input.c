@@ -31,21 +31,18 @@ char **tokenize_input(char *input_string)
 	int buffersize = TOKEN_BUFFSIZE;
 	int index = 0;
 	char **tokens = malloc(sizeof(char *) * buffersize);
-	char *token;
-	char *saveptr = NULL;
+	char *saveptr = NULL, *token;
 
 	if (tokens == NULL)
 	{
-		fprintf(stderr, "allocation error\n");
+		perror("allocation error\n");
 		exit(EXIT_FAILURE);
 	}
-
 	token = strtok_custom(input_string, TOKEN_DELIMETER, &saveptr);
 	while (token != NULL)
 	{
 		tokens[index] = strdup(token);
 		index++;
-
 
 		if (index >= buffersize)
 		{
@@ -53,14 +50,13 @@ char **tokenize_input(char *input_string)
 			tokens = realloc(tokens, buffersize * sizeof(char *));
 			if (!tokens)
 			{
-				fprintf(stderr, "allocation error\n");
+				perror("allocation error");
 				exit(EXIT_FAILURE);
 			}
 		}
 		token = strtok_custom(NULL, TOKEN_DELIMETER, &saveptr);
 	}
 	tokens[index] = NULL;
-
 	return (tokens);
 }
 
