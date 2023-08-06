@@ -18,14 +18,14 @@ int main(void)
 
 		if (str[0] == '\0')
 		{
-			free(str);
 			continue;
 		}
 
 		tokens = tokenize_input(str);
 		status = token_execution(tokens);
 
-		free_tokens(tokens);
+		free(str);
+		free(tokens);
 
 	} while (status != 0);
 
